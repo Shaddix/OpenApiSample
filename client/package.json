@@ -1,0 +1,18 @@
+{
+  "name": "openapisample-client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "nswag-client": "nswag openapi2tsclient /input:http://localhost:5000/nswag/swagger/v1/swagger.json /output:nswag/api-client.ts /template:Axios /serviceHost:. /generateConstructorInterface:true /markOptionalProperties:true /nullValue:undefined",
+    "swashbuckle-nswag-client": "nswag openapi2tsclient /input:http://localhost:5000/swashbuckle/swagger/v1/swagger.json /output:swashbuckle/api-client.ts /template:Axios /serviceHost:. /generateConstructorInterface:true /markOptionalProperties:true /nullValue:undefined",
+    "swashbuckle-openapi-client": "openapi-generator generate -g typescript-fetch -i https://localhost:5001/swashbuckle/swagger/v1/swagger.json -o swashbuckle-openapi",
+    "swashbuckle-openapi-client-from-file": "openapi-generator generate -g typescript-axios -i swagger.json -o swashbuckle-openapi"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "1.0.13-4.3.1",
+    "nswag": "13.5.0"
+  }
+}
